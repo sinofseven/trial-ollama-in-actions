@@ -29,7 +29,7 @@ jobs:
 
       - run: uv sync
 
-      - run: uv run main.py
+      - run: uv run main.bk.01.py
 
       - run: ollama ps
         if: always()
@@ -37,6 +37,6 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: response
-          path: main.py.*
+          path: main.*
 
       - run: cat main.py.json

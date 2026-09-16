@@ -19,3 +19,10 @@ jobs:
       - run: uv sync
 
       - run: uv run main.py
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: response
+          path: main.py.json
+
+      - run: cat main.py.json

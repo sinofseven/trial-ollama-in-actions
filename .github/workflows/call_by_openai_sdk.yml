@@ -35,6 +35,6 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: response
-          path: main.py.json
+          path: main.py.*
 
       - run: cat main.py.json

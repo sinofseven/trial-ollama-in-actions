@@ -1,3 +1,4 @@
+import os
 import sys
 
 from openai import OpenAI
@@ -14,7 +15,7 @@ with open("sample.txt") as f:
     text = f.read()
 
 resp = client.responses.parse(
-    model="gemma4:e2b",
+    model=os.environ["MODEL_NAME"],
     input=[
         {
             "role": "system",

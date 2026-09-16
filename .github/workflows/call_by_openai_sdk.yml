@@ -3,8 +3,8 @@ env:
   # MODEL_NAME: qwen3:4b
   # MODEL_NAME: glm4:9b  # context exceeded
   # MODEL_NAME: deepseek-v2:16b  # context exceeded
-  # MODEL_NAME: qwen3.5:9b
-  MODEL_NAME: gemma4:12b
+  MODEL_NAME: qwen3.5:9b
+  # MODEL_NAME: gemma4:12b
 
 jobs:
   ollama:

@@ -14,12 +14,15 @@ client = OpenAI(base_url="http://localhost:11434/v1", api_key="dummy")
 with open("sample.txt") as f:
     text = f.read()
 
+with open("system_prompt.txt") as f:
+    system_prompt = f.read()
+
 resp = client.responses.parse(
     model=os.environ["MODEL_NAME"],
     input=[
         {
             "role": "system",
-            "content": "Please extract all URLs from the markdown text provided by the user.",
+            "content": system_prompt,
         },
         {"role": "user", "content": text},
     ],

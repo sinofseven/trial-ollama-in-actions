@@ -4,6 +4,7 @@ import warnings
 from openai import OpenAI
 from pydantic import BaseModel
 
+# 構造化アウトプットで警告が出るため
 warnings.filterwarnings("ignore", module="pydantic")
 
 
@@ -18,12 +19,7 @@ client = OpenAI(
 
 resp = client.responses.parse(
     model=os.environ["MODEL_NAME"],
-    input=[
-        {
-            "role": "user",
-            "content": "Please calculate the first 30 numbers of the Fibonacci sequence and output them as an array.",
-        }
-    ],
+    input="Please calculate the first 20 numbers of the Fibonacci sequence and output them as an array.",
     text_format=ResponseFormat,
 )
 

@@ -1,6 +1,7 @@
 on: workflow_dispatch
 env:
-  MODEL_NAME: qwen3:4b
+  # MODEL_NAME: qwen3:4b
+  MODEL_NAME: glm4:9b
 
 jobs:
   ollama:

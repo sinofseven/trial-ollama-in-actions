@@ -4,8 +4,14 @@ jobs:
   ollama:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Ollama
-        uses: ai-action/setup-ollama@v2
-
       - name: Run model
-        run: ollama run gemma4:e2b 'What model are you?'
+        uses: ai-action/ollama-action@v2
+        id: model
+        with:
+          model: llama3.2
+          prompt: Explain the basics of machine learning.
+
+      - name: Print response
+        run: echo "$response"
+        env:
+          response: ${{ steps.model.outputs.response }}

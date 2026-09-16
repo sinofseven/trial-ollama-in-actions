@@ -23,6 +23,7 @@ resp = client.responses.parse(
         {"role": "user", "content": text},
     ],
     text_format=ResponseFormat,
+    reasoning={"effort": "medium"},
 )
 
 with open(f"{sys.argv[0]}.json", "w") as f:

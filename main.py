@@ -1,3 +1,5 @@
+import sys
+
 from openai import OpenAI
 from pydantic import BaseModel
 
@@ -22,3 +24,6 @@ resp = client.responses.parse(
     ],
     text_format=ResponseFormat,
 )
+
+with open(f"{sys.argv[0]}.json", "w") as f:
+    f.write(resp.model_dump_json(indent=2, ensure_ascii=False))

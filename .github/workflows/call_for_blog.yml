@@ -16,6 +16,8 @@ jobs:
         with:
           python-version: v3.14
 
-      - run: pip install openai
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
 
-      - run: python main.py
+      - run: uv sync
+
+      - run: uv run main.py

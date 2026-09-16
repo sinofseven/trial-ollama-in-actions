@@ -18,7 +18,7 @@ resp = client.responses.parse(
     input=[
         {
             "role": "system",
-            "content": "Please extract URLs from the markdown text provided by the user.",
+            "content": "Please extract all URLs from the markdown text provided by the user.",
         },
         {"role": "user", "content": text},
     ],

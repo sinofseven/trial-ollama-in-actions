@@ -14,7 +14,7 @@ with open("sample.txt") as f:
     text = f.read()
 
 resp = client.responses.parse(
-    model="gemma4:e4b",
+    model="gemma4:e2b",
     input=[
         {
             "role": "system",
@@ -24,6 +24,7 @@ resp = client.responses.parse(
     ],
     text_format=ResponseFormat,
     reasoning={"effort": "medium"},
+    verbosity="medium",
 )
 
 with open(f"{sys.argv[0]}.json", "w") as f:

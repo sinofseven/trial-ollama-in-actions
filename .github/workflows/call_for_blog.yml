@@ -19,3 +19,5 @@ jobs:
       - run: pip install openai
 
       - run: python main.py
+
+      - run: ollama ps

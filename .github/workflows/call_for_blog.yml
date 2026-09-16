@@ -1,0 +1,21 @@
+on: workflow_dispatch
+env:
+  MODEL_NAME: gemma4:e2b
+
+jobs:
+  ollama:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ai-action/setup-ollama@v2
+
+      - run: ollama pull $MODEL_NAME
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: v3.14
+
+      - run: pip install openai
+
+      - run: uv run aaa.py

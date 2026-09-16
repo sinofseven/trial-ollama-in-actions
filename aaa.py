@@ -16,7 +16,8 @@ client = OpenAI(
 resp = client.responses.parse(
     model=os.environ["MODEL_NAME"],
     text_format=ResponseFormat,
-    input="Please calculate the first 30 numbers of the Fibonacci sequence and output them as an array.",
+    prompt="Please calculate the first 30 numbers of the Fibonacci sequence and output them as an array.",
 )
 
+## Debugのために全部出力する
 print(resp.model_dump_json(indent=2, ensure_ascii=False))

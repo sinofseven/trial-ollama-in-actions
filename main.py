@@ -24,6 +24,10 @@ resp = client.responses.parse(
             "role": "system",
             "content": system_prompt,
         },
+        {
+            "role": "user",
+            "content": "Next, I will provide the markdown text of an index for documents published on the web. Please extract the URLs from it.",
+        },
         {"role": "user", "content": text},
     ],
     text_format=ResponseFormat,

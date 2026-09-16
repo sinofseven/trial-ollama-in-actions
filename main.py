@@ -14,7 +14,7 @@ with open("sample.txt") as f:
     text = f.read()
 
 resp = client.responses.parse(
-    model="gemma4:e2b",
+    model="gemma4:e4b",
     input=[
         {
             "role": "system",

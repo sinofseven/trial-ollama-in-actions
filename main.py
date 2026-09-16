@@ -24,7 +24,7 @@ resp = client.responses.parse(
         {"role": "user", "content": text},
     ],
     text_format=ResponseFormat,
-    reasoning={"effort": "medium"},
+    reasoning={"effort": "high"},
     verbosity="medium",
 )
 

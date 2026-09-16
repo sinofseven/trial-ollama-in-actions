@@ -1,6 +1,6 @@
 on: workflow_dispatch
 env:
-  OLLAMA_CONTEXT_LENGTH: 131072
+  # OLLAMA_CONTEXT_LENGTH: 131072
   # MODEL_NAME: qwen3:4b
   # MODEL_NAME: glm4:9b  # context exceeded
   # MODEL_NAME: deepseek-v2:16b  # context exceeded

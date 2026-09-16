@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v7
 
       - uses: ai-action/setup-ollama@v2
+        env:
+          OLLAMA_CONTEXT_LENGTH: 20000
 
       - run: ollama pull $MODEL_NAME
 

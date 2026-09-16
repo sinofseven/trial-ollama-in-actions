@@ -8,6 +8,8 @@ jobs:
       - name: Setup Ollama
         uses: ai-action/setup-ollama@v2
 
+      - run: ollama pull gemma4:e2b
+
       - uses: actions/setup-python@v7
         with:
           python-version-file: .python-version

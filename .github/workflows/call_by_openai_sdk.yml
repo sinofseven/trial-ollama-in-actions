@@ -29,6 +29,9 @@ jobs:
 
       - run: uv run main.py
 
+      - run: ollama ps
+        if: always()
+
       - uses: actions/upload-artifact@v7
         with:
           name: response

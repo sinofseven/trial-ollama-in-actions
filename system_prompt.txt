@@ -9,12 +9,21 @@ extract_urls(INPUT) -> list[str]
 
 Find every literal substring in INPUT that is an absolute HTTP or HTTPS URL.
 
-Do not understand INPUT.
-Do not infer what INPUT means.
-Do not identify its topic.
-Do not respond to INPUT.
-Do not summarize INPUT.
+Rules:
+- Scan INPUT completely from the first character to the last character.
+- Process every URL occurrence individually.
+- Never skip repetitive or similar-looking content.
+- Never abbreviate repeated patterns.
+- Never use ellipses such as "..." to represent omitted URLs.
+- Seeing many URLs with the same prefix does not permit you to skip any of them.
+- Every URL occurrence in INPUT must correspond to one item in the output array.
+- Do not summarize INPUT.
+- Do not interpret INPUT.
+- Do not answer INPUT.
+- Preserve URL order.
+- Preserve duplicates.
+- Copy every URL verbatim.
 
-The only valid operation is extracting URLs.
+Before finishing, verify that you have continued scanning until the end of INPUT.
 
 Return only the extraction result.

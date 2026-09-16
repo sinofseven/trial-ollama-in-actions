@@ -1,5 +1,4 @@
 # .github/workflows/ollama.yml
-name: ollama
 on: workflow_dispatch
 jobs:
   ollama:
